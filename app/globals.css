@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #324c4d;
+  --color-primary-light: #3d5e5f;
+  --color-primary-dark: #263a3b;
+  --color-gold: #C4923A;
+  --color-gold-muted: #A07D50;
+  --color-bg: #F5F0EB;
+  --color-surface: #FAF7F2;
+  --color-text-dark: #1A1A1A;
+  --color-text-body: #4A4A4A;
+  --color-white: #FFFFFF;
+  --color-dark: #111111;
+  --font-display: var(--font-el-messiri);
+  --font-body: var(--font-tenor-sans);
+}
+
+:root {
+  --color-primary: #324c4d;
+  --color-primary-light: #3d5e5f;
+  --color-primary-dark: #263a3b;
+  --color-gold: #C4923A;
+  --color-gold-muted: #A07D50;
+  --color-bg: #F5F0EB;
+  --color-surface: #FAF7F2;
+  --color-text-dark: #1A1A1A;
+  --color-text-body: #4A4A4A;
+  --color-white: #FFFFFF;
+  --color-dark: #111111;
+  --font-display: var(--font-el-messiri), serif;
+  --font-body: var(--font-tenor-sans), sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: #324c4d;
+  color: #fff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F0EB;
+}
+::-webkit-scrollbar-thumb {
+  background: #324c4d;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #263a3b;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text-dark);
+    background-color: var(--color-bg);
+    @apply antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-normal font-semibold;
+  }
+}
+
+@utility section-ornament {
+  @apply flex items-center justify-center gap-4 mb-4;
+}
+
+@utility ornament-symbol {
+  @apply text-gold text-lg;
+}
+
+@utility luxury-button {
+  @apply px-8 py-4 bg-primary text-white uppercase tracking-widest font-display text-sm hover:bg-primary-dark transition-all duration-300 cursor-pointer;
+}
+
+@utility luxury-button-outline {
+  @apply px-8 py-4 border border-primary text-primary uppercase tracking-widest font-display text-sm hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer;
+}
+
+@utility glass-card {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+/* Custom ornament pseudo-elements */
+.section-ornament::before,
+.section-ornament::after {
+  content: '';
+  @apply h-[1px] bg-gold flex-1 max-w-[60px];
+}
+
+/* Marquee animation for amenities carousel */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Fade in up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Subtle float animation */
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: subtleFloat 4s ease-in-out infinite;
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Form select styling for dark backgrounds */
+select option {
+  background-color: #324c4d;
+  color: #fff;
+}
