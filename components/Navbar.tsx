@@ -25,10 +25,12 @@ export default function Navbar({ onEnquireClick }: NavbarProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isScrolled
-        ? "bg-white/95 backdrop-blur-md py-2 shadow-[0_2px_20px_rgba(0,0,0,0.08)]"
-        : "bg-gradient-to-b from-black/40 to-transparent py-5"
-        } ${isMobileMenuOpen ? "z-[100]" : "z-50"}`}
+      className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isMobileMenuOpen
+        ? "bg-[#324c4d] z-[100]"
+        : isScrolled
+          ? "bg-white/95 backdrop-blur-md py-2 shadow-[0_2px_20px_rgba(0,0,0,0.08)] z-50"
+          : "bg-gradient-to-b from-black/40 to-transparent py-5 z-50"
+        }`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
@@ -38,7 +40,9 @@ export default function Navbar({ onEnquireClick }: NavbarProps) {
             alt="Balaji Classica Logo"
             width={120}
             height={60}
-            className={`h-auto transition-all duration-500 ${isScrolled || isMobileMenuOpen ? "w-[100px] md:w-[120px] brightness-0 invert" : "w-[90px] md:w-[110px] brightness-0 invert"
+            className={`h-auto transition-all duration-500 ${isScrolled && !isMobileMenuOpen
+              ? "w-[100px] md:w-[120px]"
+              : "w-[90px] md:w-[110px] brightness-0 invert"
               }`}
             priority
           />
@@ -78,7 +82,7 @@ export default function Navbar({ onEnquireClick }: NavbarProps) {
 
         {/* Mobile Toggle */}
         <button
-          className={`lg:hidden p-2 transition-colors relative z-[101] ${isScrolled || isMobileMenuOpen ? "text-white" : "text-white"
+          className={`lg:hidden p-2 transition-colors relative z-[101] ${isMobileMenuOpen || !isScrolled ? "text-white" : "text-primary"
             }`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
