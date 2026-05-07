@@ -25,10 +25,10 @@ export default function Navbar({ onEnquireClick }: NavbarProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+      className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isScrolled
         ? "bg-white/95 backdrop-blur-md py-2 shadow-[0_2px_20px_rgba(0,0,0,0.08)]"
         : "bg-gradient-to-b from-black/40 to-transparent py-5"
-        }`}
+        } ${isMobileMenuOpen ? "z-[100]" : "z-50"}`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
@@ -38,7 +38,7 @@ export default function Navbar({ onEnquireClick }: NavbarProps) {
             alt="Balaji Classica Logo"
             width={120}
             height={60}
-            className={`h-auto transition-all duration-500 ${isScrolled ? "w-[100px] md:w-[120px]" : "w-[90px] md:w-[110px] brightness-0 invert"
+            className={`h-auto transition-all duration-500 ${isScrolled || isMobileMenuOpen ? "w-[100px] md:w-[120px] brightness-0 invert" : "w-[90px] md:w-[110px] brightness-0 invert"
               }`}
             priority
           />
@@ -78,11 +78,11 @@ export default function Navbar({ onEnquireClick }: NavbarProps) {
 
         {/* Mobile Toggle */}
         <button
-          className={`lg:hidden p-2 transition-colors ${isScrolled ? "text-primary" : "text-white"
+          className={`lg:hidden p-2 transition-colors relative z-[101] ${isScrolled || isMobileMenuOpen ? "text-white" : "text-white"
             }`}
-          onClick={() => setIsMobileMenuOpen(true)}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <Menu size={28} />
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </nav>
 
@@ -94,27 +94,10 @@ export default function Navbar({ onEnquireClick }: NavbarProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.4, ease: "easeOut" }}
-            className="fixed inset-0 bg-[#324c4d] z-[9999] flex flex-col"
+            className="fixed inset-0 h-screen w-screen bg-[#324c4d] z-[99] flex flex-col overflow-y-auto"
           >
-            {/* Mobile Header */}
-            <div className="flex justify-between items-center p-6 border-b border-white/10">
-              <Image
-                src="/images/logo.png"
-                alt="Balaji Classica Logo"
-                width={90}
-                height={45}
-                className="h-auto w-[90px] brightness-0 invert"
-              />
-              <button
-                className="text-white/70 hover:text-white p-2 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <X size={28} />
-              </button>
-            </div>
-
             {/* Mobile Nav Links */}
-            <div className="flex-1 flex flex-col justify-center px-8">
+            <div className="flex-1 flex flex-col justify-center px-8 min-h-[500px]">
               <ul className="flex flex-col gap-6 mb-12">
                 {NAV_LINKS.map((link, index) => (
                   <motion.li
@@ -126,7 +109,7 @@ export default function Navbar({ onEnquireClick }: NavbarProps) {
                     <a
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-white text-2xl font-display uppercase tracking-widest hover:text-white/70 transition-colors flex items-center gap-4"
+                      className="text-white text-3xl font-display uppercase tracking-widest hover:text-white/70 transition-colors flex items-center gap-4"
                     >
                       <span className="w-6 h-[1px] bg-white/20" />
                       {link.name}
@@ -143,7 +126,7 @@ export default function Navbar({ onEnquireClick }: NavbarProps) {
                   setIsMobileMenuOpen(false);
                   onEnquireClick();
                 }}
-                className="w-full py-4 bg-white text-primary font-display uppercase tracking-widest text-sm hover:bg-white/90 transition-colors cursor-pointer"
+                className="w-full py-5 bg-white text-primary font-display uppercase tracking-widest text-sm hover:bg-white/90 transition-colors cursor-pointer"
               >
                 Enquire Now
               </motion.button>
