@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const AMENITIES = [
-  { name: "Fitness Centre", img: "/images/amenities/Gym.tif" },
+  { name: "Fitness Centre", img: "/images/amenities/Gym.jpg" },
   { name: "Outdoor Sports", img: "/images/amenities/outdoor games.jpg" },
-  { name: "Mini Theatre", img: "/images/amenities/Theater.tif" },
-  { name: "Grand Clubhouse", img: "/images/amenities/reception_club.tif" },
+  { name: "Mini Theatre", img: "/images/amenities/Theater.jpg" },
+  { name: "Grand Clubhouse", img: "/images/amenities/reception_club.jpg" },
   { name: "Panoramic Views", img: "/images/amenities/view_09.jpg" },
   { name: "Swimming Pool", img: null },
   { name: "Kids Play Area", img: null },
@@ -38,7 +38,7 @@ export default function AmenitiesSection() {
           {/* <span className="text-white/80 text-sm font-body block mb-3">
             Exclusive Access
           </span> */}
-          <h2 
+          <h2
             className="text-3xl md:text-5xl text-white mb-4 leading-tight normal-case tracking-normal font-display"
             style={{ fontFamily: 'var(--font-el-messiri)' }}
           >

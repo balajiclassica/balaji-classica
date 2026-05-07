@@ -7,6 +7,7 @@ import AboutSection from "@/components/AboutSection";
 import AmenitiesSection from "@/components/AmenitiesSection";
 import LocationSection from "@/components/LocationSection";
 import FloorPlans from "@/components/FloorPlans";
+import LegacySection from "@/components/LegacySection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import EnquiryPopup from "@/components/EnquiryPopup";
@@ -75,6 +76,8 @@ export default function Home() {
       <div id="floorplans">
         <FloorPlans isUnlocked={isUnlocked} onUnlockClick={openPopup} />
       </div>
+
+      <LegacySection />
 
       {/* <div id="infra">
         <InfraSection />
