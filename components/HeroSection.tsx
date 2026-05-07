@@ -58,7 +58,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
           {/* Mobile image */}
           <div
             className="w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
-            style={{ backgroundImage: "url('/images/banner/mob.jpg')" }}
+            style={{ backgroundImage: "url('/images/banner/mob4.jpg')" }}
           />
         </motion.div>
 
