@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { El_Messiri, Tenor_Sans } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const elMessiri = El_Messiri({
   subsets: ["latin"],
@@ -112,6 +113,7 @@ export default function RootLayout({
       </head>
       <body className={`${elMessiri.variable} ${tenorSans.variable} antialiased`}>
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );
