@@ -95,20 +95,22 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
             className="absolute inset-0 w-full h-full"
           >
             {/* Desktop Image */}
-            <div
-              className="hidden md:block w-full h-full bg-contain bg-center bg-no-repeat"
-              style={{
-                backgroundImage: `url(${slides[currentSlide].desktop})`,
-              }}
-            />
+            <div className="hidden md:flex w-full h-full items-center justify-center bg-[#1a3a6b]">
+              <img
+                src={slides[currentSlide].desktop}
+                alt="Balaji Classica Banner"
+                className="w-full h-full object-contain"
+              />
+            </div>
 
             {/* Mobile Image */}
-            <div
-              className="md:hidden w-full h-full bg-contain bg-center bg-no-repeat"
-              style={{
-                backgroundImage: `url(${slides[currentSlide].mobile})`,
-              }}
-            />
+            <div className="md:hidden flex w-full h-full items-center justify-center bg-[#1a3a6b]">
+              <img
+                src={slides[currentSlide].mobile}
+                alt="Balaji Classica Banner"
+                className="w-full h-full object-contain"
+              />
+            </div>
           </motion.div>
         </AnimatePresence>
 
