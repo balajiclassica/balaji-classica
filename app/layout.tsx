@@ -21,10 +21,10 @@ const siteUrl = "https://balajiclassica.co"; // Replace with actual domain
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Balaji Classica | Luxury 1 & 2 BHK Flats in Dombivli East",
+    default: "Balaji Classica Dombivli | Best 1 & 2BHK starting from ₹31.99 Lacs* by SSL",
     template: "%s | Balaji Classica"
   },
-  description: "Discover Balaji Classica in Dombivli East. Premium 1 & 2 BHK residences by SS Life Spaces featuring 25+ lifestyle amenities, rooftop garden, and excellent connectivity. Book your dream home today.",
+  description: "Balaji Classica Dombivli | Best 1 & 2BHK starting from ₹31.99 Lacs* by SSL",
   keywords: [
     "Balaji Classica",
     "Balaji Classica Dombivli",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Balaji Classica | Luxury 1 & 2 BHK Flats in Dombivli East",
-    description: "Experience premium living at Balaji Classica. Meticulously designed apartments with 25+ amenities in the heart of Dombivli.",
+    title: "Balaji Classica Dombivli | Best 1 & 2BHK starting from ₹31.99 Lacs*",
+    description: "Balaji Classica Dombivli | Best 1 & 2BHK starting from ₹31.99 Lacs* by SSL. Experience luxury living in Dombivli East with premium amenities.",
     url: siteUrl,
     siteName: "Balaji Classica",
     images: [
@@ -64,8 +64,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Balaji Classica | Luxury 1 & 2 BHK Flats in Dombivli East",
-    description: "Discover luxury living in Dombivli East at Balaji Classica.",
+    title: "Balaji Classica Dombivli | Best 1 & 2BHK starting from ₹31.99 Lacs*",
+    description: "Balaji Classica Dombivli | Best 1 & 2BHK starting from ₹31.99 Lacs* by SSL. Discover luxury living in Dombivli East.",
     images: ["/images/banner/desk.jpg"],
   },
   robots: {
